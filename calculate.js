@@ -1,21 +1,21 @@
-function calculate (a) {
-    return {
-        a,
+function calculate(a) {
+  return {
+    a,
 
-        add(b) {
-            this.a += b
-            return this;
-        },
+    add(b) {
+      this.a += b;
+      return this;
+    },
 
-        multiply(c) {
-            this.a *= c
-            return this;
-        },
+    multiply(c) {
+      this.a *= c;
+      return this;
+    },
 
-        result() {
-            return this.a;
-        },
-    }
+    result() {
+      return this.a;
+    },
+  };
 }
 
-console.log(calculate(3).add(2).multiply(2).result());
+calculate(3).add(2).multiply(2).result();

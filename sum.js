@@ -1,16 +1,15 @@
-function sum (a) {
-    function sum1(b) {
-        function sum2(c) {
-            function result (){
-                return result.this
-            }
-            result.this = a + b + c
-            return result
-        }
-        return sum2
-    }
-    return sum1
-}
+const sum = a => {
+  this.a = a;
+  return sum1;
+},
+sum1 = b => {
+  this.b = b;
+  return sum2;
+},
+sum2 = c => {
+  this.answer = a + b + c;
+  return result;
+},
+result = () => this.answer;
 
-let res = sum(1)(2)(3)();
-console.log(res);
+sum(1)(2)(3)();
